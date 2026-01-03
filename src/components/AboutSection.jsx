@@ -101,7 +101,7 @@ const AboutSection = () => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             {[
               { value: '22+', label: 'Years of Excellence' },
-              { value: '10+', label: 'Projects Completed' },
+              { value: '10+', label: 'Ongoing Projects' },
               { value: '98%', label: 'Client Satisfaction' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
