@@ -1,4 +1,4 @@
-import { Search, FileSpreadsheet, PlayCircle, CheckSquare, ClipboardList } from 'lucide-react';
+import { Search, FileSpreadsheet, PlayCircle, CheckSquare, ClipboardList, TrendingUp } from 'lucide-react';
 
 const ApproachSection = () => {
   const steps = [
@@ -32,6 +32,12 @@ const ApproachSection = () => {
       title: 'Closure & Review',
       description: 'Final handover, comprehensive documentation, and performance assessment for continuous improvement.',
     },
+    {
+      number: '06',
+      icon: TrendingUp,
+      title: 'Post-Project Support',
+      description: 'Ongoing support and optimization services to ensure long-term success and value delivery.',
+    },
   ];
 
   return (
@@ -61,11 +67,9 @@ const ApproachSection = () => {
 
         {/* Timeline */}
         <div className="relative">
-          {/* Connecting Line - Desktop */}
-          <div className="hidden lg:block absolute top-28 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-secondary/30 to-transparent" />
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6">
-            {steps.map((step, index) => (
+          {/* First Row - 3 Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6 mb-8 lg:mb-6">
+            {steps.slice(0, 3).map((step, index) => (
               <div
                 key={index}
                 className="relative group"
@@ -94,7 +98,47 @@ const ApproachSection = () => {
                 </div>
 
                 {/* Connector Arrow - Mobile/Tablet */}
-                {index < steps.length - 1 && (
+                {index < 2 && (
+                  <div className="lg:hidden flex justify-center my-4">
+                    <div className="w-0.5 h-8 bg-secondary/30" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Second Row - 3 Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6">
+            {steps.slice(3, 6).map((step, index) => (
+              <div
+                key={index + 3}
+                className="relative group"
+              >
+                {/* Step Card */}
+                <div className="bg-background rounded-2xl p-6 border border-border hover:border-secondary/30 transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 h-full">
+                  {/* Number Badge */}
+                  <div className="w-14 h-14 bg-gradient-gold rounded-full flex items-center justify-center mb-5 shadow-gold group-hover:scale-110 transition-transform duration-300 relative z-10">
+                    <span className="font-display font-bold text-accent-foreground text-sm">
+                      {step.number}
+                    </span>
+                  </div>
+
+                  {/* Icon */}
+                  <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mb-4">
+                    <step.icon className="w-5 h-5 text-secondary" />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="font-display text-lg font-semibold mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+
+                {/* Connector Arrow - Mobile/Tablet */}
+                {index < 2 && (
                   <div className="lg:hidden flex justify-center my-4">
                     <div className="w-0.5 h-8 bg-secondary/30" />
                   </div>

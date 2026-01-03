@@ -4,8 +4,7 @@ import {
   DollarSign, 
   ClipboardCheck, 
   FileText, 
-  MapPin,
-  ArrowRight 
+  MapPin
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -95,7 +94,7 @@ const ServicesSection = () => {
               </p>
 
               {/* Features List */}
-              <ul className="space-y-2 mb-6">
+              <ul className="space-y-2">
                 {service.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-center gap-2 text-sm text-muted-foreground">
                     <span className="w-1.5 h-1.5 bg-secondary rounded-full flex-shrink-0" />
@@ -103,15 +102,6 @@ const ServicesSection = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* Learn More Link */}
-              <a 
-                href="#contact" 
-                className="inline-flex items-center gap-2 text-secondary font-semibold text-sm group-hover:gap-3 transition-all duration-300"
-              >
-                Learn More
-                <ArrowRight className="w-4 h-4" />
-              </a>
             </div>
           ))}
         </div>

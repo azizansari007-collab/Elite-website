@@ -1,8 +1,45 @@
 import { ArrowUp, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleFooterLinkClick = (e, href) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      if (isHomePage) {
+        const element = document.querySelector(href);
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    }
   };
 
   const footerLinks = {
@@ -25,9 +62,8 @@ const Footer = () => {
       { name: 'Downloads', href: '#' },
     ],
     legal: [
-      { name: 'Privacy Policy', href: '#' },
-      { name: 'Terms of Service', href: '#' },
-      { name: 'Cookie Policy', href: '#' },
+      { name: 'Privacy Policy', href: '/privacy-policy' },
+      { name: 'Terms of Service', href: '/terms-of-service' },
     ],
   };
 
@@ -54,19 +90,15 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <a href="#home" className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 bg-gradient-gold rounded-xl flex items-center justify-center shadow-gold">
-                <span className="font-display font-bold text-accent-foreground text-xl">E</span>
+            <Link to="/" className="flex items-center gap-3 mb-6">
+              <div className="h-16 sm:h-20 w-auto">
+                <img 
+                  src="/Elite-logo.jpeg" 
+                  alt="Elite Design and Engineering Solutions" 
+                  className="h-full w-auto object-contain"
+                />
               </div>
-              <div>
-                <span className="font-display font-bold text-lg leading-tight block">
-                  Elite Design
-                </span>
-                <span className="text-primary-foreground/70 text-xs font-medium tracking-wide">
-                  Engineering Solutions
-                </span>
-              </div>
-            </a>
+            </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6 max-w-sm">
               Delivering projects on time, within budget, and with exceptional quality. 
               Your trusted partner in project management consultancy.
@@ -93,12 +125,22 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleFooterLinkClick(e, link.href)}
+                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200 cursor-pointer"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -109,12 +151,22 @@ const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200"
-                  >
-                    {link.name}
-                  </a>
+                  {link.href.startsWith('#') ? (
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleFooterLinkClick(e, link.href)}
+                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200 cursor-pointer"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <a
+                      href={link.href}
+                      className="text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200"
+                    >
+                      {link.name}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
@@ -129,13 +181,13 @@ const Footer = () => {
             </p>
             <div className="flex items-center gap-6">
               {footerLinks.legal.map((link, index) => (
-                <a
+                <Link
                   key={index}
-                  href={link.href}
+                  to={link.href}
                   className="text-xs text-primary-foreground/60 hover:text-accent transition-colors duration-200"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>

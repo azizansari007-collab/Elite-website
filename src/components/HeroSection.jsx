@@ -98,33 +98,23 @@ const HeroSection = () => {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-5 mb-8">
                   <div className="text-center p-5 bg-background rounded-xl border border-border">
-                    <div className="font-display text-4xl font-bold text-accent mb-1">15+</div>
-                    <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
+                    <div className="font-display text-4xl font-bold text-accent mb-1">22+</div>
+                    <div className="text-sm text-muted-foreground font-medium">Years of Experience</div>
                   </div>
                   <div className="text-center p-5 bg-background rounded-xl border border-border">
-                    <div className="font-display text-4xl font-bold text-primary mb-1">200+</div>
-                    <div className="text-sm text-muted-foreground font-medium">Projects Delivered</div>
+                    <div className="font-display text-4xl font-bold text-primary mb-1">10+</div>
+                    <div className="text-sm text-muted-foreground font-medium">Our Projects</div>
                   </div>
                   <div className="text-center p-5 bg-background rounded-xl border border-border">
                     <div className="font-display text-4xl font-bold text-primary mb-1">98%</div>
                     <div className="text-sm text-muted-foreground font-medium">Client Satisfaction</div>
                   </div>
                   <div className="text-center p-5 bg-background rounded-xl border border-border">
-                    <div className="font-display text-4xl font-bold text-primary mb-1">50+</div>
+                    <div className="font-display text-4xl font-bold text-primary mb-1">5+</div>
                     <div className="text-sm text-muted-foreground font-medium">Expert Consultants</div>
                   </div>
                 </div>
 
-                {/* Trust Badge */}
-                <div className="flex items-center gap-4 p-4 bg-primary/5 rounded-xl border border-primary/10">
-                  <div className="w-12 h-12 bg-gradient-navy rounded-lg flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground">Trusted Partner</div>
-                    <div className="text-sm text-muted-foreground">ISO 9001:2015 Certified</div>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -145,7 +135,7 @@ const HeroSection = () => {
             <div className="absolute -top-4 right-8 bg-accent text-accent-foreground px-4 py-2 rounded-full shadow-gold animate-float" style={{ animationDelay: '1s' }}>
               <div className="flex items-center gap-2">
                 <Award className="w-4 h-4" />
-                <span className="text-sm font-bold">PMI Certified</span>
+                <span className="text-sm font-bold">22+ Years Experience</span>
               </div>
             </div>
           </div>

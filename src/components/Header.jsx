@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,31 +29,71 @@ const Header = () => {
 
   const handleNavClick = (e, href) => {
     e.preventDefault();
-    const element = document.querySelector(href);
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    
+    if (isHomePage) {
+      // On home page, just scroll to section
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // On other pages, navigate to home then scroll
+      if (href === '#home') {
+        navigate('/');
+      } else {
+        navigate('/');
+        // Wait for navigation, then scroll
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            const headerOffset = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
     }
     setIsMobileMenuOpen(false);
   };
 
   const scrollToContact = () => {
-    const element = document.querySelector('#contact');
-    if (element) {
-      const headerOffset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    if (isHomePage) {
+      const element = document.querySelector('#contact');
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      navigate('/#contact');
+      setTimeout(() => {
+        const element = document.querySelector('#contact');
+        if (element) {
+          const headerOffset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
     }
     setIsMobileMenuOpen(false);
   };
@@ -64,19 +108,15 @@ const Header = () => {
     >
       <div className="container-custom flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-3 group">
-          <div className="w-11 h-11 bg-gradient-navy rounded-xl flex items-center justify-center shadow-md transition-transform duration-300 group-hover:scale-105">
-            <span className="font-display font-bold text-primary-foreground text-xl">E</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="h-16 sm:h-20 w-auto transition-transform duration-300 group-hover:scale-105">
+            <img 
+              src="/Elite-logo.jpeg" 
+              alt="Elite Design and Engineering Solutions" 
+              className="h-full w-auto object-contain"
+            />
           </div>
-          <div className="hidden sm:block">
-            <span className="font-display font-bold text-primary text-lg leading-tight block">
-              Elite Design
-            </span>
-            <span className="text-muted-foreground text-xs font-medium tracking-wide">
-              Engineering Solutions
-            </span>
-          </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
