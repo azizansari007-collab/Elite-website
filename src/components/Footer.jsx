@@ -44,16 +44,16 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Team', href: '#about' },
-      { name: 'Careers', href: '#contact' },
-      { name: 'News & Insights', href: '#' },
+      { name: 'Overview', href: '#about' },
+      { name: 'Our Team', href: '#team' },
+      { name: 'Projects', href: '#projects' },
+      { name: 'Contact', href: '#contact' },
     ],
     services: [
       { name: 'Project Management', href: '#services' },
-      { name: 'Cost Control', href: '#services' },
-      { name: 'Quality Assurance', href: '#services' },
-      { name: 'Contract Administration', href: '#services' },
+      { name: 'Cost Management', href: '#services' },
+      { name: 'Expert Opinion', href: '#services' },
+      { name: 'Energy Audit', href: '#services' },
     ],
     resources: [
       { name: 'Case Studies', href: '#' },
@@ -100,8 +100,8 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6 max-w-sm">
-              Delivering projects on time, within budget, and with exceptional quality. 
-              Your trusted partner in project management consultancy.
+              A leading Project Management company in Bhopal and Gwalior.
+              Hassle-free, affordable and cost-effective delivery from planning to handover.
             </p>
             
             {/* Social Links */}

@@ -6,7 +6,7 @@ const ContactSection = () => {
     {
       icon: MapPin,
       title: 'Our Office',
-      details: ['A-206 Kasturi heights, New Lambakheda', 'Bhopal, MP 462038'],
+      details: ['A-206 Kasturi heights, New Lambakheda', 'Bhopal, MP 462038', 'Serving Bhopal | Gwalior'],
     },
     {
       icon: Phone,
@@ -43,7 +43,7 @@ const ContactSection = () => {
           </h2>
           
           <p className="text-lg text-muted-foreground">
-            Ready to bring your vision to life? Get in touch with our team to discuss 
+            Serving Bhopal and Gwalior. Get in touch with our team to discuss
             your project requirements and discover how we can help.
           </p>
         </div>

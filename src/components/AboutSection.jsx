@@ -4,32 +4,32 @@ const AboutSection = () => {
   const features = [
     {
       icon: Target,
-      title: 'Client-Focused Leadership',
-      description: 'Every decision driven by your project goals and success metrics.',
+      title: 'Client-First Discipline',
+      description: 'Our priority is to fulfill client requirements and deliver the best possible outcome with ease and satisfaction.',
     },
     {
       icon: Users,
-      title: 'Transparent Communication',
-      description: 'Clear reporting and open dialogue throughout the project lifecycle.',
+      title: 'Equality & Integrity',
+      description: 'We maintain equality, diversity and integrity in each of our projects.',
     },
     {
       icon: Shield,
-      title: 'Risk Management',
-      description: 'Proactive identification and mitigation of potential challenges.',
+      title: 'In-House Engineering',
+      description: 'In-house engineering capabilities help us save CAPEX and OPEX on assigned projects.',
     },
     {
       icon: Award,
-      title: 'Quality-Driven Delivery',
-      description: 'Unwavering commitment to excellence in every deliverable.',
+      title: 'Resource Optimisation',
+      description: 'We use our experience to optimise resources throughout every project phase, delivering significant cost savings.',
     },
   ];
 
   const whyChooseUs = [
-    'Client-focused project leadership',
-    'Transparent communication & reporting',
-    'Efficient risk management & governance',
-    'Quality-driven delivery',
-    'Customized solutions for every project',
+    'Hassle-free, affordable and cost-effective delivery',
+    'Collaborative working with Client, Brand and consultants',
+    'Pre-construction to handover within stipulated timelines',
+    'In-house engineering to save CAPEX & OPEX',
+    'Equality, diversity and integrity in every project',
   ];
 
   return (
@@ -43,20 +43,26 @@ const AboutSection = () => {
           <div>
             {/* Section Label */}
             <div className="section-label mb-6">
-              <span>About Us</span>
+              <span>Overview</span>
             </div>
 
             <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Transforming Visions Into{' '}
-              <span className="text-secondary">Successful Realities</span>
+              A Leading{' '}
+              <span className="text-secondary">Project Management</span>{' '}
+              Company
             </h2>
 
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+              We believe in discipline, and our priority is to fulfill the client's requirements
+              and provide them with the best possible solutions with absolute ease and satisfaction.
+              We strive to deliver in a hassle-free, affordable and cost-effective way.
+            </p>
+
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Elite Design and Engineering Solutions is a trusted partner in project execution, 
-              specializing in project management consultancy that transforms client visions into 
-              successful realities. With expertise across planning, execution, cost control, 
-              quality assurance and coordination, we deliver high-performance outcomes that 
-              meet time, budget and quality expectations.
+              Elite Design and Engineering Solutions is a leading Project Management company
+              driven by a robust workforce of Project Managers, Team Leaders, Engineers and
+              other multi-skilled technical resources. At Elite, our governing principle is to
+              maintain equality, diversity and integrity in each of our projects.
             </p>
 
             {/* Why Choose Us List */}
@@ -98,11 +104,12 @@ const AboutSection = () => {
 
         {/* Stats Bar */}
         <div className="mt-20 pt-16 border-t border-border">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: '22+', label: 'Years of Excellence' },
-              { value: '10+', label: 'Ongoing Projects' },
-              { value: '98%', label: 'Client Satisfaction' },
+              { value: '10+', label: 'Leadership Team' },
+              { value: '2', label: 'Cities — Bhopal & Gwalior' },
+              { value: '100%', label: 'Client Commitment' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="font-display text-3xl md:text-4xl font-bold text-accent mb-2">
@@ -119,4 +126,3 @@ const AboutSection = () => {
 };
 
 export default AboutSection;
-

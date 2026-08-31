@@ -1,10 +1,8 @@
 import { 
   Briefcase, 
-  Calendar, 
   DollarSign, 
-  ClipboardCheck, 
-  FileText, 
-  MapPin
+  Lightbulb, 
+  Zap
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -12,39 +10,47 @@ const ServicesSection = () => {
   const services = [
     {
       icon: Briefcase,
-      title: 'Project Management Consultancy',
-      description: 'Comprehensive oversight of every aspect of a project lifecycle with strategic planning, team coordination, risk mitigation and resource management.',
-      features: ['Project brief development', 'Team selection & planning', 'Progress monitoring', 'Risk evaluation'],
-    },
-    {
-      icon: Calendar,
-      title: 'Project Planning & Scheduling',
-      description: 'Developing robust schedules that align project milestones with deliverables, resource allocation, and timelines for efficient delivery.',
-      features: ['Timeline forecasting', 'Critical Path identification', 'Resource optimization', 'Progress tracking'],
+      title: 'Project Management',
+      description: 'Seamless execution for exceptional results — from pre-construction through construction, post-construction and handover, within the stipulated timeline.',
+      features: [
+        'Collaborative working with Client, Brand and consultants',
+        'Brand design standards identified before the project',
+        'Planning, procurement and execution across all phases',
+        'In-house engineering to save CAPEX & OPEX',
+      ],
     },
     {
       icon: DollarSign,
-      title: 'Cost Control & Budget Management',
-      description: 'Establishing and maintaining realistic, optimized project budgets. From cost estimation to continuous monitoring for financial efficiency.',
-      features: ['Budget planning', 'Value engineering', 'Cost trend analysis', 'Procurement oversight'],
+      title: 'Cost Management',
+      description: 'Optimising resources for business value. We use our experience to reduce overall project cost without compromising quality or timelines.',
+      features: [
+        'Resource optimisation through every project phase',
+        'Significant savings in overall project cost',
+        'Interest during construction (IDC) savings',
+        'CAPEX and OPEX reduction',
+      ],
     },
     {
-      icon: ClipboardCheck,
-      title: 'Quality Assurance & Control',
-      description: 'Ensuring project standards meet regulatory and client expectations through rigorous inspections and compliance tracking.',
-      features: ['Material inspection', 'Compliance standards', 'Quality checkpoints', 'Improvement tracking'],
+      icon: Lightbulb,
+      title: 'Expert Opinion',
+      description: 'Expert technical advisory for complex projects, drawing on decades of experience across hotels, hospitals, commercial and high-rise buildings.',
+      features: [
+        'Technical advisory for complex projects',
+        'Design basis review and optimisation',
+        'Brand and consultant coordination',
+        'Method-oriented operations',
+      ],
     },
     {
-      icon: FileText,
-      title: 'Contract Administration',
-      description: 'Efficient contract oversight ensuring obligations are fulfilled, deliverables are met, and disputes are minimized.',
-      features: ['Contract drafting', 'Scope verification', 'Change management', 'Payment certification'],
-    },
-    {
-      icon: MapPin,
-      title: 'Site Coordination & Monitoring',
-      description: 'Establishing consistent communication channels onsite, coordinating teams, and monitoring progress aligned with safety standards.',
-      features: ['Onsite coordination', 'Team management', 'Safety compliance', 'Progress monitoring'],
+      icon: Zap,
+      title: 'Energy Audit',
+      description: 'Identifying energy-saving opportunities to minimise operational losses and deliver a quality, efficient product.',
+      features: [
+        'Energy-saving opportunity identification',
+        'Reduced operational losses',
+        'Efficient product delivery',
+        'Long-term OPEX savings',
+      ],
     },
   ];
 
@@ -66,13 +72,14 @@ const ServicesSection = () => {
           </h2>
           
           <p className="text-lg text-muted-foreground">
-            We provide comprehensive solutions tailored to your project's unique requirements. 
-            Every phase—from planning to handover—is executed with precision and transparency.
+            We work collaboratively with the Client, Brand and the team of consultants —
+            identifying design standards, managing planning through handover, and
+            delivering in-house engineering to save CAPEX and OPEX.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
@@ -115,7 +122,7 @@ const ServicesSection = () => {
               Ready to Start Your Project?
             </h3>
             <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Contact us today to discuss how we can help you achieve your project goals 
+              Contact us today to discuss how we can help you achieve your project goals
               with our expert consultancy services.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -152,4 +159,3 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
-

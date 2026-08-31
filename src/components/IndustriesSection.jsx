@@ -1,36 +1,36 @@
-import { Building2, Home, Factory, Hotel, Server, HeartPulse } from 'lucide-react';
+import { Building2, Home, Hotel, HeartPulse, Landmark, Leaf } from 'lucide-react';
 
 const IndustriesSection = () => {
   const industries = [
     {
-      icon: Building2,
-      title: 'Commercial Buildings',
-      description: 'Office towers, retail centers, and mixed-use developments.',
-    },
-    {
-      icon: Home,
-      title: 'Residential Developments',
-      description: 'Housing complexes, apartments, and community projects.',
-    },
-    {
-      icon: Factory,
-      title: 'Industrial Projects',
-      description: 'Manufacturing facilities, warehouses, and logistics centers.',
-    },
-    {
       icon: Hotel,
-      title: 'Hospitality & Retail',
-      description: 'Hotels, resorts, shopping malls, and entertainment venues.',
-    },
-    {
-      icon: Server,
-      title: 'Technology & Data Centers',
-      description: 'IT infrastructure, data centers, and tech campuses.',
+      title: 'Hospitality & Hotels',
+      description: '5-star hotels, greenfield hotel projects, and guest-room to public-area interiors.',
     },
     {
       icon: HeartPulse,
       title: 'Healthcare Facilities',
-      description: 'Hospitals, clinics, and medical research centers.',
+      description: 'Hospitals and medical centres, from planning through MEPF execution and handover.',
+    },
+    {
+      icon: Home,
+      title: 'Residential',
+      description: 'High-end bungalows, housing complexes, and residential developments.',
+    },
+    {
+      icon: Building2,
+      title: 'Commercial & Retail',
+      description: 'Shopping malls, commercial buildings, and mixed-use developments.',
+    },
+    {
+      icon: Leaf,
+      title: 'Eco Resorts',
+      description: 'Jungle and eco-resort projects with coordinated planning, design and execution.',
+    },
+    {
+      icon: Landmark,
+      title: 'Institutional Buildings',
+      description: 'Schools, institutional campuses, and public buildings across India and the Gulf.',
     },
   ];
 
@@ -47,13 +47,13 @@ const IndustriesSection = () => {
           </div>
           
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">
-            Industries We{' '}
+            Sectors We{' '}
             <span className="text-secondary">Serve</span>
           </h2>
           
           <p className="text-lg text-muted-foreground">
-            We support projects across diverse sectors, bringing specialized expertise 
-            and proven methodologies to every industry we serve.
+            From hotels and hospitals to commercial, residential and institutional buildings —
+            we bring specialised project management expertise to every sector we serve.
           </p>
         </div>
 
@@ -90,4 +90,3 @@ const IndustriesSection = () => {
 };
 
 export default IndustriesSection;
-

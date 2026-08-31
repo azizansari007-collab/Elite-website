@@ -1,15 +1,15 @@
-import { ArrowRight, CheckCircle2, Shield, Award, TrendingUp } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Award, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   const highlights = [
-    'On-Time Delivery',
-    'Budget Control',
-    'Quality Assurance',
+    'On-Time Handover',
+    'CAPEX & OPEX Savings',
+    'Quality Control',
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-gradient-hero">
+    <section id="home" className="relative min-h-screen flex items-center pt-36 sm:pt-40 md:pt-44 pb-16 overflow-hidden bg-gradient-hero">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: 'linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)',
@@ -25,13 +25,13 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="max-w-2xl">
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full mb-6 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary-foreground/10 border border-primary-foreground/20 rounded-full mb-8 animate-fade-up">
               <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-sm font-semibold text-primary-foreground">Project Management Excellence</span>
+              <span className="text-sm font-medium text-primary-foreground">Project Management Company · Bhopal | Gwalior</span>
             </div>
 
             {/* Main Heading */}
-            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6 animate-fade-up animation-delay-100">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-semibold text-primary-foreground leading-tight tracking-tight mb-6 animate-fade-up animation-delay-100">
               Elite Design &{' '}
               <span className="text-accent">Engineering</span>{' '}
               Solutions
@@ -39,11 +39,11 @@ const HeroSection = () => {
 
             {/* Subtitle */}
             <p className="text-lg md:text-xl text-primary-foreground/80 leading-relaxed mb-8 animate-fade-up animation-delay-200">
-              Delivering projects{' '}
-              <span className="text-primary-foreground font-semibold">on time</span>,{' '}
-              <span className="text-primary-foreground font-semibold">within budget</span>, and with{' '}
-              <span className="text-primary-foreground font-semibold">exceptional quality</span>. 
-              Professional project management consultancy for seamless execution.
+              Hassle-free, affordable and cost-effective project management —
+              from planning and procurement through construction to handover,
+              with in-house engineering that saves{' '}
+              <span className="text-primary-foreground font-semibold">CAPEX</span> and{' '}
+              <span className="text-primary-foreground font-semibold">OPEX</span>.
             </p>
 
             {/* CTA Buttons */}
@@ -66,13 +66,13 @@ const HeroSection = () => {
                 variant="hero-outline" 
                 size="xl"
                 onClick={() => {
-                  const element = document.querySelector('#services');
+                  const element = document.querySelector('#projects');
                   if (element) {
                     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
               >
-                Our Services
+                Our Projects
               </Button>
             </div>
 
@@ -103,15 +103,15 @@ const HeroSection = () => {
                   </div>
                   <div className="text-center p-5 bg-background rounded-xl border border-border">
                     <div className="font-display text-4xl font-bold text-primary mb-1">10+</div>
-                    <div className="text-sm text-muted-foreground font-medium">Our Projects</div>
+                    <div className="text-sm text-muted-foreground font-medium">Leadership Team</div>
                   </div>
                   <div className="text-center p-5 bg-background rounded-xl border border-border">
-                    <div className="font-display text-4xl font-bold text-primary mb-1">98%</div>
-                    <div className="text-sm text-muted-foreground font-medium">Client Satisfaction</div>
+                    <div className="font-display text-4xl font-bold text-primary mb-1">5</div>
+                    <div className="text-sm text-muted-foreground font-medium">Management Steps</div>
                   </div>
                   <div className="text-center p-5 bg-background rounded-xl border border-border">
-                    <div className="font-display text-4xl font-bold text-primary mb-1">5+</div>
-                    <div className="text-sm text-muted-foreground font-medium">Expert Consultants</div>
+                    <div className="font-display text-4xl font-bold text-primary mb-1">2</div>
+                    <div className="text-sm text-muted-foreground font-medium">Cities We Serve</div>
                   </div>
                 </div>
 
@@ -125,8 +125,8 @@ const HeroSection = () => {
                   <TrendingUp className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-foreground">On-Time Delivery</div>
-                  <div className="text-xs text-muted-foreground">99.5% Success Rate</div>
+                  <div className="text-sm font-semibold text-foreground">Resource Optimisation</div>
+                  <div className="text-xs text-muted-foreground">Significant project cost savings</div>
                 </div>
               </div>
             </div>
@@ -154,4 +154,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
