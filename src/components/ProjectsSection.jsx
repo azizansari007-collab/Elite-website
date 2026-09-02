@@ -6,6 +6,7 @@ const ProjectsSection = () => {
       icon: Home,
       title: 'High-end Bungalow',
       location: 'Gwalior',
+      image: '/high-end-bunglow.png',
       tags: ['Residential'],
       stats: [
         { label: 'Built-up area', value: '27,000 sq. ft.' },
@@ -15,6 +16,7 @@ const ProjectsSection = () => {
       icon: HeartPulse,
       title: 'Rainbow Hospital',
       location: 'Madhya Pradesh',
+      image: '/rainbow-hospital.png',
       tags: ['Healthcare'],
       stats: [
         { label: 'Built-up area', value: '188,000 sq. ft.' },
@@ -25,6 +27,7 @@ const ProjectsSection = () => {
       icon: HeartPulse,
       title: 'Krishna Hospital',
       location: 'Madhya Pradesh',
+      image: '/krishna-hospital.png',
       tags: ['Healthcare'],
       stats: [
         { label: 'Built-up area', value: '175,000 sq. ft.' },
@@ -35,6 +38,7 @@ const ProjectsSection = () => {
       icon: Hotel,
       title: 'ITC WelcomHotel',
       location: 'Jabalpur, M.P.',
+      image: '/itx-welcome-hotel-jabalpur.png',
       tags: ['Hospitality', 'Greenfield'],
       stats: [
         { label: 'Built-up area', value: '220,000 sq. ft.' },
@@ -45,6 +49,7 @@ const ProjectsSection = () => {
       icon: Hotel,
       title: 'ITC WelcomHotel',
       location: 'Gwalior, M.P.',
+      image: '/itc-welcome-gwalior.png',
       tags: ['5 Star Hotel', 'Greenfield'],
       stats: [
         { label: 'Built-up area', value: '225,000 sq. ft.' },
@@ -55,6 +60,8 @@ const ProjectsSection = () => {
       icon: Leaf,
       title: 'Panna Eco Resort',
       location: 'Madhya Pradesh',
+      image: '/panna-eco-resort.png',
+      imageFit: 'contain',
       tags: ['Hospitality', 'Eco Resort'],
       stats: [],
     },
@@ -85,20 +92,27 @@ const ProjectsSection = () => {
           {projects.map((project, index) => (
             <div
               key={`${project.title}-${project.location}`}
-              className="group relative bg-background rounded-2xl p-8 border border-border overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-secondary/30"
+              className="group relative bg-background rounded-2xl border border-border overflow-hidden transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 hover:border-secondary/30"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-              <div className="relative z-10">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center group-hover:bg-secondary/15 transition-colors duration-300">
-                    <project.icon className="w-7 h-7 text-secondary" />
-                  </div>
-                  <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
+              <div className="relative aspect-[16/10] overflow-hidden bg-muted">
+                <img
+                  src={project.image}
+                  alt={`${project.title} in ${project.location}`}
+                  className={`h-full w-full transition-transform duration-500 group-hover:scale-105 ${
+                    project.imageFit === 'contain' ? 'object-contain p-3' : 'object-cover'
+                  }`}
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-black/10 pointer-events-none" />
+                <div className="absolute top-3 left-3 w-11 h-11 bg-background/90 backdrop-blur-sm rounded-xl flex items-center justify-center border border-border/60">
+                  <project.icon className="w-5 h-5 text-secondary" />
                 </div>
+                <span className="absolute top-3 right-3 text-xs font-semibold text-foreground uppercase tracking-wider px-2.5 py-1 rounded-full bg-background/90 backdrop-blur-sm border border-border/60">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+              </div>
 
+              <div className="relative p-6 md:p-7">
                 <h3 className="font-display text-xl font-semibold mb-1">
                   {project.title}
                 </h3>

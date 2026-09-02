@@ -3,7 +3,7 @@ const TeamSection = () => {
     name: 'Mr. Abdul Aziz Ansari',
     role: 'Managing Director',
     initials: 'AA',
-    bio: 'Mr. Abdul Aziz Ansari is a Mechanical Engineering graduate and M.Tech in Thermal Engineering from the Institute of Science and Technology, Bhopal. He is a focused and result-oriented professional with over 22 years of rich experience in Project Management, Planning and Execution of shopping malls, commercial buildings and high-rise buildings. He is known for quality construction, operations and contracts, running successful method-oriented operations and taking initiatives for business growth through process improvement.',
+    bio: 'Mr. Abdul Aziz Ansari is an Electrical & Mechanical Engineering graduate and M.Tech in Thermal Engineering. He is a focused and result-oriented professional with over 22 years of rich experience in Project Management, Planning and Execution of Hotels, Hospitals shopping malls, commercial buildings and high-rise buildings. He is known for quality construction, operations and contracts, running successful method-oriented operations and taking initiatives for business growth through process improvement.',
     projects: [
       'Dubai International Airport',
       'Taj Hotel Dubai',
@@ -16,7 +16,6 @@ const TeamSection = () => {
       'ITC WelcomHotel Jabalpur',
       'Sagar Multispeciality, Bhopal',
       'Panna Jungle Resort',
-      'Vivanta by Taj Indore',
       'RCH Hospital Bhopal',
       'Krishna Hospital Bhopal',
       'ITC WelcomHotel Gwalior',
